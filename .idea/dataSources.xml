@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="laradock@localhost" uuid="fe0bf05a-403f-4085-8655-c15a3a9756ab">
+    <data-source source="LOCAL" name="laradock@localhost" read-only="true" uuid="4239bf47-4469-4b8d-8923-cd289df20a54">
       <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/laradock</jdbc-url>
     </data-source>

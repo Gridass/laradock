@@ -9,9 +9,9 @@ services:
     ports:
         - 8098:80
     links:
-      - fpm
+        - fpm
     volumes:
-      - ./:/var/www/laradock
+        - ./:/var/www/laradock
   fpm:
     build:
       context: .
@@ -25,9 +25,9 @@ services:
     ports:
         - 33061:3306
     environment:
-        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_ROOT_PASSWORD=123
         - MYSQL_DATABASE=laradock
-        - MYSQL_USER=uroot
+        - MYSQL_USER=root
         - MYSQL_PASSWORD=123
 
   phpmyadmin:
@@ -36,8 +36,8 @@ services:
         - mysql
     environment:
         - PMA_ARBITRARY=1
-        - MYSQL_USER=uroot
-        - MYSQL_PASSWORD=123
+        - MYSQL_USER=root
+        - MYSQL_PASSWORD=root
         - MYSQL_ROOT_PASSWORD=root
     ports:
         - 8080:80

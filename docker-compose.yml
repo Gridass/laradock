@@ -23,12 +23,12 @@ services:
   mysql:
     image: mysql:5.7
     ports:
-        - 33061:3306
+        - 3306:3306
     environment:
-        - MYSQL_ROOT_PASSWORD=123
+        - MYSQL_ROOT_PASSWORD=root
         - MYSQL_DATABASE=laradock
-        - MYSQL_USER=root
-        - MYSQL_PASSWORD=123
+        - MYSQL_USER=uroot
+        - MYSQL_PASSWORD=root
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.9
@@ -36,6 +36,7 @@ services:
         - mysql
     environment:
         - PMA_ARBITRARY=1
+        - PMA_PORT=3306:3306
         - MYSQL_USER=root
         - MYSQL_PASSWORD=root
         - MYSQL_ROOT_PASSWORD=root

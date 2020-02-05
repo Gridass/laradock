@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class Article extends Model
 {
     // Mass assigned
-    protected $fillable = ['title', 'slug', 'description_short', 'reviews', 'image', 'image_show', 'published', 'created_by', 'modified_by'];
+    protected $fillable = ['title', 'slug', 'description_short','description', 'reviews', 'image', 'image_show', 'published', 'created_by', 'modified_by'];
 
     // Mutators
     public function setSlugAttribute($value) {

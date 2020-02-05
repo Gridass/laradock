@@ -10,7 +10,7 @@ class PostsController extends Controller
 {
     public function index(){
 
-        $articles= DB::table('article')->paginate(24);
+        $articles= DB::table('articles')->paginate(24);
         return view('index', compact('articles'));
 
 
@@ -18,7 +18,7 @@ class PostsController extends Controller
     }
     public function show($id){
         $article = Article::find($id);
-        return view('posts.show', compact('article'));
+        return view('blog.show', compact('article'));
 
     }
     public function create(){
@@ -42,7 +42,7 @@ class PostsController extends Controller
 
     }
     public function edit(Article $article){
-        return view("posts.edit", compact('article'));
+        return view("blog.edit", compact('article'));
 
     }
     public function update(Article $article){

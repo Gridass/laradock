@@ -47,21 +47,27 @@ class ArticleController extends Controller
     {
 
         $article = Article::create($request->all());
-
+//dd($request);
         // Categories
         if($request->input('categories')) :
             $article->categories()->attach($request->input('categories'));
         endif;
+        $path = $article->id . '.' .$request->file('image')->store('uploads', 'public');
 
-        $imgName = ($article->id . '.' . $request->file('image')->getClientOriginalExtension());
+        //return view('admin.articles.partials.form', ['path' => $path]);
+       /* $imgName = ($article->id . '.' . $request->file('image'));
+        //dd(Image::make($request->file('image')))
+        $image  = Image::configure(array('driver' => 'imagick'));
         $image = Image::make($request->file('image'));
+        //dd($image);
         $image->resize(1366, 786);
-        $image->response('jpg', 90);
-        $fullPath = public_path('/images/');
-        $image->save($fullPath . DIRECTORY_SEPARATOR . $imgName);
-        $article->image = $imgName;
-        $article->save();
+        $image->response('jpg');
+        $fullPath = public_path('public/images/');
+        $image->save($fullPath . DIRECTORY_SEPARATOR . $imgName);*/
+        $article->image = $path;
 
+
+        $article->save();
         return redirect()->route('admin.articles.index');
     }
 

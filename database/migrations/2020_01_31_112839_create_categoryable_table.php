@@ -13,7 +13,7 @@ class CreateCategoryableTable extends Migration
      */
     public function up()
     {
-        Schema::create('categoryable', function (Blueprint $table) {
+        Schema::create('categoryables', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('categoryable_id');
             $table->string('categoryable_type');
@@ -28,6 +28,6 @@ class CreateCategoryableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categoryable');
+        Schema::dropIfExists('categoryables');
     }
 }

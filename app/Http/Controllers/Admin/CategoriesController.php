@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+
 class CategoriesController extends Controller
 {
     /**
@@ -28,7 +28,7 @@ class CategoriesController extends Controller
     public function create()
     {
         return view('admin.categories.create', [
-            'category.blade.php'   => [],
+            'category'   => [],
             'categories' => Category::with('children')->where('parent_id', '0')->get(),
             'delimiter'  => ''
         ]);
@@ -44,7 +44,7 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -67,7 +67,7 @@ class CategoriesController extends Controller
     public function edit(Category $category)
     {
         return view('admin.categories.edit', [
-            'category.blade.php'   => $category,
+            'category'   => $category,
             'categories' => Category::with('children')->where('parent_id', '0')->get(),
             'delimiter'  => ''
         ]);

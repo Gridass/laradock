@@ -40,7 +40,6 @@
 
             </div>
         </div>
-        <p class="credit">Admin_tut_boh</p>
     </section>
 </div>
 </body>

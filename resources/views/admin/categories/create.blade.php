@@ -4,7 +4,7 @@
 
     <div class="container">
         <hr />
-        <form class="form-horizontal" action="{{route('admin.categories.blade.php.store')}}" method="post">
+        <form class="form-horizontal" action="{{route('admin.categories.store')}}" method="post">
             {{ csrf_field() }}
 
             {{-- Form include --}}

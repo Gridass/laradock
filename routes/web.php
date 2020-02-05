@@ -37,13 +37,13 @@ Route::delete('/reviews/{id}', "ReviewController@destroy");
 */
 
 Route::group(['namespace' => 'Blog'], function () {
-    Route::get('/', "PostsController@index");
-    Route::get('/posts/create', "PostsController@create");
-    Route::get('/posts/{post}', "PostsController@show");
-    Route::post('/post', "PostsController@store");
-    Route::get('/posts/{post}/edit', "PostsController@edit");
-    Route::patch('/posts/{post}', "PostsController@update");
-    Route::delete('/posts/{post}', "PostsController@destroy");
+    Route::get('/', "PostsController@index")->name('index');
+    Route::get('/blog/create', "PostsController@create");
+    Route::get('/blog/{post}', "PostsController@show");
+    Route::post('/blog', "PostsController@store");
+    Route::get('/blog/{post}/edit', "PostsController@edit");
+    Route::patch('/blog/{post}', "PostsController@update");
+    Route::delete('/blog/{post}', "PostsController@destroy");
 
 });
 /*

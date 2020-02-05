@@ -35,10 +35,10 @@
     <label for="">Полное описание</label>
     <textarea class="form-control" id="description" name="description">{{$article->description ?? ""}}</textarea>
     <input type="file" name="image">
-</form>
+
 <hr/>
 <input class="btn btn-primary" type="submit" value="Сохранить">
-
+</form>
 {{--
 @isset($path)
     <img class="img-fluid" src="{{asset('/storage/'. $path)}}">

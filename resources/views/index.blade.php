@@ -5,14 +5,15 @@
         @foreach($articles as $article)
             <div class="col-md-4">
                 <h2>{{$article->title}}</h2>
-                <img src="/storage{{ $article->image }}"  width=100%" height="100%" >
+                <img src="/storage{{ $article->image }}" width=100%" height="100%">
                 <p> {{$article->description_short}}</p>
-                <p align="left"><a href="blog/show/{{$article->id}}" class="btn btn-primary" >Далее...</a></p>
+                <p align="left"><a href="blog/{{$article->id}}" class="btn btn-primary">Далее...</a></p>
             </div>
         @endforeach
+        <div>
+            <?php echo $articles->render(); ?>
+        </div>
     </div>
-    <p><a href="/reviews" class="btn btn-default">Отзывы</a></p>
-    <div>
-        <?php echo $articles->render(); ?>
+    <div><p><a href="/reviews" class="btn btn-default">Отзывы</a></p>
     </div>
 @endsection

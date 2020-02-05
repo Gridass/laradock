@@ -22,7 +22,7 @@ class PostsController extends Controller
 
     }
     public function create(){
-        return view("posts.create", compact('article'));
+        return view("blog.create", compact('article'));
 
     }
     public function store(){
@@ -30,13 +30,14 @@ class PostsController extends Controller
             'title' => 'required|min:4',
             'slug' => 'required',
             'description_short' => 'required',
+            'description' => 'required|max:500',
             'reviews' =>'required',
             'image'=>''
 
         ]);
 
         Post::create(
-            request(array('title','slug','description_short','reviews', 'image'))
+            request(array('title','slug','description_short','description','reviews', 'image'))
         );
         return redirect('/');
 
@@ -50,10 +51,11 @@ class PostsController extends Controller
             'title' => 'required|min:4',
             'slug' => 'required',
             'description_short' => 'required',
+            'description' => 'required|max:500',
             'reviews' =>'required',
             'image' => ''
         ]);
-        $article->update(request(['title','slug','description_short','reviews','image']));
+        $article->update(request(['title','slug','description_short','description','reviews','image']));
         return redirect('/');
     }
     public function destroy(Article $article){

@@ -1,18 +1,37 @@
-@extends('layouts.layout')
+@include('layouts.layout')
 
-@section('content')
-    <div class="row"  >
-        <div class="col-sm-12 blog-main">
-            <div class="blog-post ">
-                <h2 class="blog-post-title" align="center">{{$article->title}}</h2>
-                <p><img src="/images/{{ $article->image }}" width="100%"></p>
-                <div style="word-wrap: break-word"><font size="4">{{$article->description}}</font></div>
-                <div style="word-wrap: break-word"><font size="1">{{$article->created_at}}--{{"Username"}}</font></div>
+<body class="single-page">
+<div class="wrap-body">
+@include('layouts.header-mini')
+<!--////////////////////////////////////Container-->
+    <section id="container">
+        <div class="wrap-container">
+            <!-----------------Content-Box-------------------->
+            <div id="main-content">
+                <div class="wrap-content">
+                    <div class="row">
+                        <article class="single-post zerogrid">
+                            <div class="row wrap-post"><!--Start Box-->
+                                <div class="entry-header">
+                                    <span class="time">{{$article->created_at}} by {{$article->user_id}}</span>
+                                    <h2 class="entry-title"><a href="#">{{$article->title}}</a></h2>
+                                    <span class="cat-links"><a href="#">BUSINESS</a>, <a href="#">LIFESTYLE</a></span>
+                                </div>
+                                <div class="post-thumbnail-wrap">
+                                    <img src="{{ URL::asset('images/1.jpg') }}">
+                                </div>
+                                <div class="entry-content">
+                                    <div class="excerpt"><p>{{$article->description}}</p></div>
+                                </div>
+                            </div>
+                        </article>
+                        @include('reviews.create')
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="form-group" style="position:fixed; top:85%; left:13%">
-            <p><a href="{{(route('index'))}}" class="btn btn-primary pull-left"><i class="fa fa-plus-square-o"></i>Back</a><p/><br>
-        </div>
-    </div>
-
-@endsection
+    </section>
+    <!--////////////////////////////////////Footer-->
+    @include('layouts.footer')
+</div>
+</body>

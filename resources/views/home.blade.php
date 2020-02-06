@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.header')
 
 @section('content')
     <div class="container">
@@ -23,3 +23,4 @@
         </div>
     </div>
 @endsection
+@include('layouts.footer')

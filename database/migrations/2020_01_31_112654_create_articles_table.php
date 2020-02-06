@@ -15,6 +15,8 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned()->default(1);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('slug');
             $table->text('description_short')->nullable();
@@ -23,8 +25,6 @@ class CreateArticlesTable extends Migration
             $table->boolean('image-show')->nullable();
             $table->boolean('published')->nullable();
             $table->integer('viewed')->nullable();
-            $table->integer('created_by')->nullable();
-            $table->integer('modified_by')->nullable();
             $table->timestamps();
         });
     }

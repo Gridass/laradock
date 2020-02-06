@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@include('layouts.header')
 @section('content')
     <h2 align="center">Коментарии</h2>
     <div class="row" align="center">

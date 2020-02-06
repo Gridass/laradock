@@ -1,4 +1,4 @@
-<!--@extends('layouts.layout')
+<!--@include('layouts.header')
 
 @section('content')
     <h2>Edit a post</h2>

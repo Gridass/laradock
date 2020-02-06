@@ -10,7 +10,8 @@ class PostsController extends Controller
 {
     public function index(){
 
-        $articles= DB::table('articles')->paginate(24);
+        $articles= DB::table('articles')->where('published','=','1')->paginate(3);
+
         return view('index', compact('articles'));
 
 

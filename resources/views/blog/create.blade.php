@@ -1,4 +1,4 @@
-<!--@extends('layouts.layout')
+<!--@include('layouts.header')
 @section('content')
     <h2>Publish a post</h2>
     <form action="/post" method="post">

@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@include('layouts.header')
 
 @section('title', $category->title)
 

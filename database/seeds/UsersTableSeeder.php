@@ -14,19 +14,25 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $data = [
-        [
-            'name' => 'Creator Unknown',
-            'email' =>'creatorUn@gmail.com',
-            'password' => bcrypt('12345678'), // password
-            'remember_token' => Str::random(10),
-        ],
-        [
-            'name' => 'Creator',
-            'email' =>'creator@gmail.com',
-            'password' => bcrypt('12345678'), // password
-            'remember_token' => Str::random(8),
-        ],
-    ];
+            [
+                'name' => 'Creator Unknown',
+                'email' => 'creatorUn@gmail.com',
+                'password' => bcrypt('12345678'), // password
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => 'Creator',
+                'email' => 'creator@gmail.com',
+                'password' => bcrypt('12345678'), // password
+                'remember_token' => Str::random(8),
+            ],
+            [
+                'name' => 'admin',
+                'email' => 'gridass2054@gmail.com',
+                'password' => bcrypt('11111111'), // password
+                'remember_token' => Str::random(8),
+            ],
+        ];
         DB::table('users')->insert($data);
     }
 }

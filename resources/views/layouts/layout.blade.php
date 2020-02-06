@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> Portfolio</title>
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <!-- Mobile Specific Metas
+	================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <style>
-        body {
-            background: #c7b39b url(//);
-            color: #000000;
-        }
-    </style>
-</head>
-<body>
+    <!-- CSS
+	================================================== -->
+    <link rel="stylesheet" href="{{ URL::asset('css/zerogrid.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 
-<a href="/" class="btn btn-default">Перейти к новостям</a></p>
+    <!-- Custom Fonts -->
+    <link href="{{ URL::asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
 
-@include('layouts.headerNavigation')
-<br>
-<br>
-<div class="jumbarton">
-    <div class="container">
 
+    <link rel="stylesheet" href="{{ URL::asset('css/menu.css') }}">
+    <script src="{{ URL::asset('js/jquery1111.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('js/script.js') }}"></script>
+
+    <!-- Owl Carousel Assets -->
+    <link href="{{ URL::asset('own-carousel/own.carousel.css') }}" rel="stylesheet">
+
+    <!--[if lt IE 8]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/Items/ie/home?ocid=ie6_countdown_bannercode">
+            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
     </div>
-</div>
-<div class="container">
-    @yield('content')
-
-</div>
-
-</body>
-</html>
+    <![endif]-->
+<!--[if lt IE 9]>
+	<script src="{{ URL::asset('js/html5.js') }}"></script>
+	<script src="{{ URL::asset('js/css3-mediaqueries.js') }}"></script>
+	<![endif]-->
+</head>

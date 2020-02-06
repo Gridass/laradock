@@ -19,6 +19,7 @@ class BlogCategoriesSeeder extends Seeder
           'title'  => $cName,
           'slug' => Str::slug($cName,'-'),
           'parent_id' => 0,
+          'published' => 1,
         ];
         for ($i = 1; $i <= 10; $i++){
             $cName = 'Категория №'.$i;
@@ -28,10 +29,11 @@ class BlogCategoriesSeeder extends Seeder
                 'title'  => $cName,
                 'slug' => Str::slug($cName,'-'),
                 'parent_id' => $parentId,
+                'published' => 1,
             ];
 
         }
-        DB::table('blog_categories')->insert($categories);
+        DB::table('categories')->insert($categories);
 
     }
 }

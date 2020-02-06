@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\BlogCategories;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+
 class CategoriesController extends Controller
 {
     /**
@@ -15,10 +15,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //$categories = DB::table('blog_categories')->paginate(5);
-        $categories = BlogCategories::paginate(5);
-
-        return view('admin.categories.index', ['categories' => $categories]);
+        return view('admin.categories.index', [
+            'categories' => Category::paginate(10)
+        ]);
     }
 
     /**
@@ -28,8 +27,13 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create', [
+            'category'   => [],
+            'categories' => Category::with('children')->where('parent_id', '0')->get(),
+            'delimiter'  => ''
+        ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,16 +43,17 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->all());
+        return redirect()->route('admin.category.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
         //
     }
@@ -56,34 +61,44 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', [
+            'category'   => $category,
+            'categories' => Category::with('children')->where('parent_id', '0')->get(),
+            'delimiter'  => ''
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $category->update($request->except('slug'));
+        return redirect()->route('admin.categories.index');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+
+
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('admin.categories.index');
     }
 }

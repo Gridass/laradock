@@ -1,7 +1,4 @@
 @extends('layouts.layout')
-
-@section('content')
-
     <div class="container">
         <hr />
         <form class="form-horizontal" action="{{route('admin.articles.store')}}" method="post" enctype="multipart/form-data">
@@ -13,5 +10,3 @@
             <input type="hidden" name="created_by" value="{{Auth::id()}}">
         </form>
     </div>
-
-@endsection

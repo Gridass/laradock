@@ -14,7 +14,7 @@ class CreateCategoryableTable extends Migration
     public function up()
     {
         Schema::create('categoryables', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('category_id');
             $table->bigInteger('categoryable_id');
             $table->string('categoryable_type');
             $table->timestamps();

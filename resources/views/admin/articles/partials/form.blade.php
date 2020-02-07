@@ -21,7 +21,7 @@
 
     <label for="">Родительская категория</label>
     <select class="form-control" name="categories[]" multiple="">
-        @include('admin.articles.partials.categories', ['categories' => $errors])
+        @include('admin.articles.partials.categories', ['categories' => $categories])
     </select>
     {{--
     {{Form::label('image','Загрузка изображения')}}

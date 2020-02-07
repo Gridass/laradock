@@ -1,5 +1,4 @@
 @foreach ($categories as $category)
-
     <option value="{{$category->id ?? ""}}"
 
             @isset($article->id)

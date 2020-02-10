@@ -1,3 +1,4 @@
+@include('layouts.layout')
 <div class="zerogrid">
     <div class="comments-are">
         <div id="comment">

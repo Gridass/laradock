@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@include('admin.layouts_admin.layout')
 <div class="container">
     <hr/>
     <form class="form-horizontal" action="{{route('admin.categories.update', $category)}}" method="post">

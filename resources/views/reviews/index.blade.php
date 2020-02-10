@@ -1,5 +1,5 @@
-@include('layouts.header')
-@section('content')
+@include('layouts.layout')
+
     <h2 align="center">Коментарии</h2>
     <div class="row" align="center">
         @foreach($reviews as $review)
@@ -26,4 +26,3 @@
             <?php echo $reviews->render(); ?>
         </div>
     </footer>
-@endsection

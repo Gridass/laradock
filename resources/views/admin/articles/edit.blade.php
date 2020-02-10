@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-    <div class="container">
+@include('admin.layouts_admin.layout')
+<div class="container">
         <hr />
         <form class="form-horizontal" action="{{route('admin.articles.update', $article)}}" method="post">
             <input type="hidden" name="_method" value="put">

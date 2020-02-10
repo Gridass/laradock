@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-@section('content')
+@include('admin.layouts_admin.layout')
+<h2 align="center">Коментарии</h2>
     <div class="row" align="center">
         @foreach($reviews as $review)
             <div class="col-md-4">
@@ -22,4 +22,3 @@
         <a href="{{route('admin.index')}}" class="button">Назад</a><br>
         <?php echo $reviews->render(); ?>
     </div>
-@endsection

@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@include('admin.layouts_admin.layout')
     <div class="container">
         <hr>
         <a href="{{route('admin.articles.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Создать пост</a>

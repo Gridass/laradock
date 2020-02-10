@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@include('admin.layouts_admin.layout')
 <div class="container">
     <hr/>
     <form class="form-horizontal" action="{{route('admin.categories.store')}}" method="post">

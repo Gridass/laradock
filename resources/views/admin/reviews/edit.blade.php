@@ -1,5 +1,5 @@
-@extends('layouts.layout')
-@section('content')
+@include('admin.layouts_admin.layout')
+
     <h2>Edit a review</h2>
 
     <form action="/reviews/{{$review->id}}" method="post">
@@ -25,6 +25,3 @@
         </div>
         @include('layouts.errors')
     </form>
-
-
-@endsection

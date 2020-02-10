@@ -1,6 +1,5 @@
-@extends('layouts.layout')
-
-@section('content')
+@include('layouts.layout')
+@include('layouts.header-mini')
     <div class="row" align="center">
 
         <div class="col-sm-12 blog-main">
@@ -12,4 +11,3 @@
             </div>
         </div>
     </div>
-@endsection

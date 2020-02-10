@@ -11,16 +11,16 @@ class AReviewController extends Controller
     public function index(){
 
         $reviews= DB::table('reviews')->paginate(25);
-        return view('reviews.index', compact('reviews' ));
+        return view('admin.reviews.index', compact('reviews' ));
 
 
     }
     public function show($id){
         $review = Review::findOrFail($id);
-        return view('reviews.show', compact('review'));
+        return view('admin.reviews.show', compact('review'));
     }
     public function create(){
-        return view("reviews.create", compact('review'));
+        return view("admin.reviews.create", compact('review'));
 
     }
     public function store(){
@@ -34,11 +34,11 @@ class AReviewController extends Controller
         Review::create(
             request(array( 'name','email','message'))
         );
-        return redirect('/reviews');
+        return redirect('/admin/reviews');
 
     }
     public function edit(Review $review){
-        return view("reviews.edit", compact('review'));
+        return view("admin.reviews.edit", compact('review'));
 
     }
     public function update(Review $review){

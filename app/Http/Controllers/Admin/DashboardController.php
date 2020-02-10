@@ -12,4 +12,13 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard');
     }
+    public function contact()
+    {
+        return view('admin.contact.contact');
+    }
+    public function about()
+    {
+        return view('admin.about.about');
+    }
+
 }

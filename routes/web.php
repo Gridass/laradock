@@ -15,6 +15,8 @@
 
 //admin
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth'] ], function () {
+    Route::get('/contact', 'DashboardController@contact')->name('admin.contact');
+    Route::get('/about', 'DashboardController@about')->name('admin.about');
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/categories', 'CategoriesController', ['as'=>'admin']);
     Route::resource('/articles', 'ArticleController', ['as'=>'admin']);
@@ -25,6 +27,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/gallery', 'Blog\GalleryController@index')->name('gallery');
 Route::get('/contact', 'Blog\ContactController@index')->name('contact');
+Route::get('/about', 'Blog\AboutController@index')->name('about');
 
 
 

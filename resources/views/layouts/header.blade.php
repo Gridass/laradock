@@ -7,23 +7,24 @@
         <ul>
             <li class="active"><a href="/"><span>Home</span></a></li>
             <li><a href="/gallery"><span>Gallery</span></a></li>
-            <li class="has-sub"><a href="archive.html"><span>Blog</span></a>
+            <li class="has-sub"><a href="#"><span>Blog</span></a>
+
                 <ul>
-                    <li class="has-sub"><a href="#"><span>Item 1</span></a>
+                    <?php foreach($cat as $category){?>
+                         <?php $c = $category->parent_id;
+                          $c = $category->parent_id;
+                         ?>
+                    <li class="has-sub"><a href="#"><span>{{$category->title}}</span></a>
                         <ul>
                             <li><a href="#"><span>Sub Item</span></a></li>
                             <li class="last"><a href="#"><span>Sub Item</span></a></li>
                         </ul>
                     </li>
-                    <li class="has-sub"><a href="#"><span>Item 2</span></a>
-                        <ul>
-                            <li><a href="#"><span>Sub Item</span></a></li>
-                            <li class="last"><a href="#"><span>Sub Item</span></a></li>
-                        </ul>
-                    </li>
+                        <?php }?>
                 </ul>
+
             </li>
-            <li><a href="single.html"><span>About</span></a></li>
+            <li><a href="/about"><span>About</span></a></li>
             <li class="last"><a href="/contact"><span>Contact</span></a></li>
         </ul>
     </div>

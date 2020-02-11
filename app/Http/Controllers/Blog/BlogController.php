@@ -13,7 +13,7 @@ class BlogController extends Controller
         $category = Category::where('slug', $slug)->first();
 
         return view('blog.category', [
-            'category.blade.php' => $category,
+            'category' => $category,
             'articles' => $category->articles()->where('published', 1)->paginate(12)
         ]);
     }
@@ -22,5 +22,10 @@ class BlogController extends Controller
         return view('blog.article', [
             'article' => Article::where('slug', $slug)->first()
         ]);
+    }
+    public function categoryShow(){
+        $cat = Category::all();
+        return view('layouts.header-mini', ['cat' => $cat]);
+
     }
 }

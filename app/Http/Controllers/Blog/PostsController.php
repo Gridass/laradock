@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Article;
 use Illuminate\Support\Facades\DB;
@@ -11,11 +12,21 @@ class PostsController extends Controller
     public function index(){
 
         $articles= DB::table('articles')->where('published','=','1')->paginate(3);
+        $cat = DB::table('categories')->paginate(15);
 
-        return view('index', compact('articles'));
+        return view('index', [
+            'articles' => $articles,
+            'cat' => $cat,
+        ]);
 
 
 
+    }
+    public function blogArticle(){
+
+        $articles= DB::table('articles')->where('published','=','1')->paginate(12);
+
+        return view('blog.article', compact('articles'));
     }
     public function show($id){
         $article = Article::find($id);

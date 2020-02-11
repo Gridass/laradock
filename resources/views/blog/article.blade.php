@@ -1,12 +1,24 @@
-@include('layouts.header')
+@include('layouts.layout')
+@include('layouts.header-mini')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 >{{$article->title}}</h1>
-                <p>{!!$article->description!!}</p>
+@foreach($articles as $article)
+<section class="content-box box-style-1 box-4">
+    <div class="zerogrid" style="width: 100%">
+        <div class="wrap-box"><!--Start Box-->
+            <div class="row">
+                <article>
+                    <div class="col-1-2">
+                        <img src="{{ URL::asset('images/slide3.jpg') }}" alt="">
+                    </div>
+                    <div class="col-1-2">
+                        <div class="entry-content t-center">
+                            <h3>{{$article->title}}</h3>
+                            <p>{{$article->description}}</p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
-@endsection
+</section>
+@endforeach

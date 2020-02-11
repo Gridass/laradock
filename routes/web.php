@@ -44,6 +44,7 @@ Route::delete('/reviews/{id}', "ReviewController@destroy");
 
 Route::group(['namespace' => 'Blog'], function () {
     Route::get('/', "PostsController@index")->name('index');
+    Route::get('/blog/article', "PostsController@blogArticle")->name('article');
     Route::get('/blog/create', "PostsController@create");
     Route::get('/blog/{post}', "PostsController@show");
     Route::post('/blog', "PostsController@store");

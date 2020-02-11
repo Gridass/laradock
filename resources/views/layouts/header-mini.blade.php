@@ -7,9 +7,9 @@
         <ul>
             <li class="active"><a href="/"><span>Home</span></a></li>
             <li><a href="/gallery"><span>Gallery</span></a></li>
-            <li class="has-sub"><a href="archive.html"><span>Blog</span></a>
+            <li class="has-sub"><a href="#"><span>Blog</span></a>
                 <ul>
-                    <li class="has-sub"><a href="#"><span>Item 1</span></a>
+                    <li class="has-sub"><a href="#"><span>////</span></a>
                         <ul>
                             <li><a href="#"><span>Sub Item</span></a></li>
                             <li class="last"><a href="#"><span>Sub Item</span></a></li>

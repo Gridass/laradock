@@ -1,3 +1,6 @@
+<?php
+$cat = \App\Models\Category::all();
+?>
 <header class="">
     <div class="logo">
         <a href="/">zVintauge</a>
@@ -9,18 +12,17 @@
             <li><a href="/gallery"><span>Gallery</span></a></li>
             <li class="has-sub"><a href="#"><span>Blog</span></a>
                 <ul>
-                    <li class="has-sub"><a href="#"><span>////</span></a>
+                    <?php foreach($cat as $category){?>
+                    <?php $c = $category->parent_id;
+                    $c = $category->parent_id;
+                    ?>
+                    <li class="has-sub"><a href="#"><span>{{$category->title}}</span></a>
                         <ul>
                             <li><a href="#"><span>Sub Item</span></a></li>
                             <li class="last"><a href="#"><span>Sub Item</span></a></li>
                         </ul>
                     </li>
-                    <li class="has-sub"><a href="#"><span>Item 2</span></a>
-                        <ul>
-                            <li><a href="#"><span>Sub Item</span></a></li>
-                            <li class="last"><a href="#"><span>Sub Item</span></a></li>
-                        </ul>
-                    </li>
+                    <?php }?>
                 </ul>
             </li>
             <li><a href="single.html"><span>About</span></a></li>
@@ -28,8 +30,8 @@
         </ul>
     </div>
     <div id="owl-slide" class="owl-carousel">
-        <div class="item">
+        {{--<div class="item">
             <img src="{{ URL::asset('images/slide1.jpg') }}" />
-        </div>
+        </div>--}}
     </div>
 </header>

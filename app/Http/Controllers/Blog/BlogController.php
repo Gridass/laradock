@@ -23,9 +23,4 @@ class BlogController extends Controller
             'article' => Article::where('slug', $slug)->first()
         ]);
     }
-    public function categoryShow(){
-        $cat = Category::all();
-        return view('layouts.header-mini', ['cat' => $cat]);
-
-    }
 }

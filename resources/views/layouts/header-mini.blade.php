@@ -25,7 +25,7 @@ $cat = \App\Models\Category::all();
                     <?php }?>
                 </ul>
             </li>
-            <li><a href="single.html"><span>About</span></a></li>
+            <li><a href="/about"><span>About</span></a></li>
             <li class="last"><a href="/contact"><span>Contact</span></a></li>
         </ul>
     </div>

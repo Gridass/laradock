@@ -1,6 +1,4 @@
 <?php
-// Free html5 templates : https://www.zerotheme.com
-
 $text = "<span style='color:red; font-size: 35px; line-height: 40px; magin: 10px;'>Error! Please try again.</span>";
 
 if(isset($_POST['submitcontact']))
@@ -11,10 +9,10 @@ if(isset($_POST['submitcontact']))
 	$subject=$_POST['subject'];
 
 	$to = "youremail@gmail.com";
-	$subject = "Zerotheme - Testing Contact Form";
+	$subject = "Testing Contact Form";
 	$message = " Name: " . $name ."\r\n Email: " . $email . "\r\n Message:\r\n" . $message;
 	 
-	$from = "Zerotheme dot com";
+	$from = "...";
 	$headers = "From:" . $from . "\r\n";
 	$headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n"; 
 	 
